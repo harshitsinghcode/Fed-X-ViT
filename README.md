@@ -125,7 +125,7 @@ This successful centralized model is the foundation for the next phases of the p
 ## 👥 Contributors
 
 1.   **Sinchan Shetty** (22BCE5238)
-2.   **Riddhi BANDYOPADHYAY** (22BCE1068)
+2.   **Riddhi Bandyopadhyay** (22BCE1068)
 3.   **Harshit Kumar Singh** (22BLC1079)
 
 ### Guided By
