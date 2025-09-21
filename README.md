@@ -9,13 +9,13 @@
 ---
 
 ## Table of Contents
- [1. Overview](#-overview)
- [2. Key Features](#-key-features)
- [3. Architecture](#-architecture)
- [4. Results & Performance](#-results--performance)
- [5. Getting Started](#-getting-started)
- [6. Next Steps](#️-next-steps-future-work)
- [7. Contributors](#-contributors)
+-  [1. Overview](#-overview)
+-  [2. Key Features](#-key-features)
+-  [3. Architecture](#-architecture)
+-  [4. Results & Performance](#-results--performance)
+-  [5. Getting Started](#-getting-started)
+-  [6. Next Steps](#️-next-steps-future-work)
+-  [7. Contributors](#-contributors)
 
 ---
 
