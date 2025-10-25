@@ -29,7 +29,7 @@ def load_client_data(data_path):
     ])
     
     train_dir = os.path.join(data_path, "Training")
-    val_dir = os.path.join(data_path, "Validation")
+    val_dir = os.path.join(data_path, "Validation") # We now use the Validation folder
 
     train_dataset = ImageFolder(train_dir, transform=train_transforms)
     val_dataset = ImageFolder(val_dir, transform=val_transforms)
@@ -37,14 +37,17 @@ def load_client_data(data_path):
     train_loader = DataLoader(train_dataset, batch_size=16, shuffle=True)
     val_loader = DataLoader(val_dataset, batch_size=16, shuffle=False)
     
+    # --- THIS IS THE FIX ---
+    # Return both loaders as a tuple
     return train_loader, val_loader
+    # --- END OF FIX ---
 
 
 class FlowerClient(fl.client.NumPyClient):
     def __init__(self, model, train_loader, val_loader):
         self.model = model
         self.train_loader = train_loader
-        self.val_loader = val_loader 
+        self.val_loader = val_loader # New validation loader
 
     def get_parameters(self, config):
         return [val.cpu().numpy() for _, val in self.model.state_dict().items()]
@@ -100,10 +103,10 @@ class FlowerClient(fl.client.NumPyClient):
                 total += labels.size(0)
         
         if total == 0:
+            print("--- Client evaluation: No data found. ---")
             return 0.0, 0, {"accuracy": 0.0}
 
         avg_loss = total_loss / total
         accuracy = correct / total
         print(f"--- Client evaluation finished: Acc={accuracy:.4f}, Loss={avg_loss:.4f} ---")
-        # Return all relevant metrics to the server
         return float(avg_loss), total, {"accuracy": float(accuracy), "loss": float(avg_loss)}

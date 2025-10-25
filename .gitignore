@@ -20,3 +20,5 @@ best_sota_hybrid_model.pth
 SplitData/
 config.json
 drive/
+saved_models/
+fl.client.Client
