@@ -22,3 +22,5 @@ config.json
 drive/
 saved_models/
 fl.client.Client
+drive/
+drive.zip
